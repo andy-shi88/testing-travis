@@ -28,9 +28,6 @@ deploy:
       branch: master
     wait-until-deployed: true
 
-after_deploy:
-  - ./restart.sh
-
 script:
   - zip -qr latest ./*
   - mkdir -p dpl_cd_upload

@@ -11,4 +11,4 @@ hooks:
   BeforeInstall:
     - location: ./backup.sh
   ApplicationStart:
-    - location: ./restart.sh
+    - location: /home/ubuntu/travis/testing-travis/restart.sh
