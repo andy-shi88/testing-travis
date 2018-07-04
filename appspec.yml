@@ -5,3 +5,7 @@ os: linux
 files:
   - source: ./
     destination: /home/ubuntu/travis/testing-travis
+
+hooks:
+  BeforeInstall:
+    - location: ./backup.sh
