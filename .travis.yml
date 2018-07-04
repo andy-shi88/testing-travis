@@ -23,7 +23,6 @@ deploy:
     bundle_type: zip
     application: CodeDeployGitHubDemo-AppPower
     deployment_group: CodeDeployGitHubDemo-DepGrpPower
-
     region: us-east-1
     on:
       branch: master
