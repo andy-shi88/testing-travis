@@ -6,27 +6,17 @@ cache:
   directories:
     - node_modules
 deploy:
-- provider: s3
-  access_key_id: AKIAIUI22CAR6L6JCV7Q
-  secret_access_key: yKOJnTDesqN0UZ43r4O6pKIktQijX6gr57n3lCWo
-  local_dir: dpl_cd_upload
-  skip_cleanup: true
-  on: &2
-    repo: organization/reponameHERE
-  bucket: yourBucketNameHERE
-  region: us-east-1
-- provider: codedeploy
-  access_key_id: AKIAIUI22CAR6L6JCV7Q
-  secret_access_key: yKOJnTDesqN0UZ43r4O6pKIktQijX6gr57n3lCWo
-  bucket: for-travis-deployment-only
-  key: latest.zip
-  bundle_type: zip
-  application: product-app-client
-  deployment_group: travis-deployment-test
-  region: us-east-1
-  on:
-    branch: master
-  wait-until-deployed: true
+deploy:
+  - provider: codedeploy
+    revision_type: github
+    access_key_id: AKIAIUI22CAR6L6JCV7Q
+    secret_access_key: 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
+    application: product-app-client
+    deployment_group: travis-deployment-test
+    region: us-east-1
+    on:
+      branch: master
+    wait-until-deployed: true
 
 after_deploy:
   - ./restart.sh
