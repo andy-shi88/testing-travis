@@ -11,8 +11,8 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY
     local_dir: dpl_cd_upload
     skip_cleanup: true
-    on: &2
-      repo: andy-shi88/testing-travis
+    on:
+      branch: master
     bucket: for-travis-deployment-only
     region: us-east-1
   - provider: codedeploy
@@ -25,7 +25,8 @@ deploy:
     deployment_group: CodeDeployGitHubDemo-DepGrpPower
 
     region: us-east-1
-    on: *2
+    on:
+      branch: master
     wait-until-deployed: true
 
 after_deploy:
