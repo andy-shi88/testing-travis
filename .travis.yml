@@ -30,7 +30,6 @@ deploy:
     wait-until-deployed: true
 
 after_deploy:
-  - ./backup.sh
   - ./restart.sh
 
 script:
