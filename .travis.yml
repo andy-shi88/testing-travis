@@ -6,16 +6,26 @@ cache:
   directories:
     - node_modules
 deploy:
-deploy:
-  - provider: codedeploy
-    revision_type: github
-    access_key_id: AKIAIUI22CAR6L6JCV7Q
-    secret_access_key: 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
-    application: product-app-client
-    deployment_group: travis-deployment-test
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    local_dir: dpl_cd_upload
+    skip_cleanup: true
+    on: &2
+      repo: andy-shi88/testing-travis
+    bucket: for-travis-deployment-only
     region: us-east-1
-    on:
-      branch: master
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: for-travis-deployment-only
+    key: latest.zip
+    bundle_type: zip
+    application: CodeDeployGitHubDemo-AppPower
+    deployment_group: CodeDeployGitHubDemo-DepGrpPower
+
+    region: us-east-1
+    on: *2
     wait-until-deployed: true
 
 after_deploy:
