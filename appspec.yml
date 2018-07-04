@@ -6,3 +6,9 @@ files:
   - source: ./
     destination: /home/ubuntu/travis/testing-travis
     overwrite: true
+
+hooks:
+  BeforeInstall:
+    - location: ./backup.sh
+  ApplicationStart:
+    - location: ./restart.sh
