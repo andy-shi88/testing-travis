@@ -2,6 +2,7 @@
   "name": "product-app-client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://s3.amazonaws.com/for-travis-deployment-only",
   "dependencies": {
     "aws-amplify": "^0.4.8",
     "react": "^16.4.1",
