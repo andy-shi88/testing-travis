@@ -14,9 +14,6 @@ hooks:
   BeforeInstall:
     - location: ./script/backup.sh
       runas: root
-  AfterInstall:
-    - location: ./script/npm-install.sh
-      runas: root
   ApplicationStart:
     - location: ./script/npm-start.sh
       runas: root
