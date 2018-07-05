@@ -15,5 +15,5 @@ hooks:
     - location: ./script/npm-install.sh
       runas: root
   ApplicationStart:
-    - location: ./npm-start.sh
+    - location: ./script/npm-start.sh
       runas: root
