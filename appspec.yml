@@ -8,6 +8,9 @@ files:
     overwrite: true
 
 hooks:
+  ApplicationStop:
+    - location: ./script/application-stop.sh
+      runas: root
   BeforeInstall:
     - location: ./script/backup.sh
       runas: root
