@@ -9,6 +9,11 @@ files:
 
 hooks:
   BeforeInstall:
-    - location: ./backup.sh
+    - location: ./script/backup.sh
+      runas: root
+  AfterInstall:
+    - location: ./script/npm-install.sh
+      runas: root
   ApplicationStart:
-    - location: ./restart.sh
+    - location: ./npm-start.sh
+      runas: root
