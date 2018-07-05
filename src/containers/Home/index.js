@@ -7,7 +7,7 @@ export default class Home extends Component {
             <div className="Home">
                 <div className="lander">
                     <h1>Home_1_2_3</h1>
-                    <p>product crud 123 update</p>
+                    <p>product crud 123 update 123</p>
                 </div>
             </div>
         )
