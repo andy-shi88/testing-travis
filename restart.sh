@@ -1,1 +1,1 @@
-cd /home/ubuntu/travis/testing-travis && npm install && npm run build && pm2 kill && pm2 start ./app.config.json
+cd /home/andy/serverless/product-app-client && npm install && npm run build && pm2 kill && pm2 start ./app.config.json
