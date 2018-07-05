@@ -15,21 +15,22 @@ deploy:
       branch: master
     bucket: for-travis-deployment-only
     region: us-east-1
-  - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    bucket: for-travis-deployment-only
-    key: latest.zip
-    bundle_type: zip
-    application: CodeDeployGitHubDemo-AppPower
-    deployment_group: CodeDeployGitHubDemo-DepGrpPower
-    region: us-east-1
-    on:
-      branch: master
-    wait-until-deployed: true
+  # - provider: codedeploy
+  #   access_key_id: $AWS_ACCESS_KEY
+  #   secret_access_key: $AWS_SECRET_KEY
+  #   bucket: for-travis-deployment-only
+  #   key: test-web/build
+  #   bundle_type: zip
+  #   application: CodeDeployGitHubDemo-AppPower
+  #   deployment_group: CodeDeployGitHubDemo-DepGrpPower
+  #   region: us-east-1
+  #   on:
+  #     branch: master
+  #   wait-until-deployed: true
 
 script:
   - npm run build
-  - zip -qr latest ./*
   - mkdir -p dpl_cd_upload
-  - mv latest.zip dpl_cd_upload/latest.zip
+  - mv ./build/* dpl_cd_upload
+  # - zip -qr latest ./*
+  # - mv latest.zip dpl_cd_upload/latest.zip
