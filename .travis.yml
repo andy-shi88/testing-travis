@@ -16,7 +16,6 @@ deploy:
     bucket: for-travis-deployment-only
     region: us-east-1
     acl: public_read
-    upload_dir: travis
   # - provider: codedeploy
   #   access_key_id: $AWS_ACCESS_KEY
   #   secret_access_key: $AWS_SECRET_KEY
