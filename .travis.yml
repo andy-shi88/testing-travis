@@ -29,6 +29,7 @@ deploy:
     wait-until-deployed: true
 
 script:
-  - zip -qr latest ./*
+  - npm run build
+  - zip -qr latest ./build/*
   - mkdir -p dpl_cd_upload
   - mv latest.zip dpl_cd_upload/latest.zip
