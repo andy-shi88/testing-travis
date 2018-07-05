@@ -16,4 +16,3 @@ hooks:
       runas: root
   ApplicationStart:
     - location: ./script/npm-start.sh
-      runas: root
