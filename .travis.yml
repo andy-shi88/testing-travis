@@ -21,3 +21,6 @@ script:
   - npm run build
   - mkdir -p dpl_cd_upload
   - mv ./build/* dpl_cd_upload
+
+notifications:
+  webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
